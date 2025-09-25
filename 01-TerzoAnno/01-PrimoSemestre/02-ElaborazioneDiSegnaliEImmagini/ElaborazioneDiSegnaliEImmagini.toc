@@ -1,2 +1,4 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
+\contentsline {chapter}{Teoria}{5}{chapter*.2}%
+\contentsline {chapter}{Laboratorio}{7}{chapter*.3}%
