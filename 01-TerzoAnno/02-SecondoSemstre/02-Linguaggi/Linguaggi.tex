@@ -1,13 +1,33 @@
-\documentclass[a4paper,12pt,openright]{book}
+\documentclass[a4paper, 12pt]{book}
+\usepackage[margin=2.5cm]{geometry}
 \usepackage[italian]{babel}
-\usepackage[many]{tcolorbox}
+%\usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{amsmath}
 \setlength{\parindent}{0pt}
 \usepackage{parskip}
 \usepackage{soul}
 \usepackage{xcolor}
 \sethlcolor{yellow}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{} % pulisce header e footer
+\fancyhead[R]{\thepage} % numero pagina a destra nell'header
+\renewcommand{\headrulewidth}{0pt} % (opzionale) elimina la riga orizzontale sotto l'header
+\fancypagestyle{plain}{%
+  \fancyhf{} % pulisce header e footer
+  \fancyhead[R]{\thepage} % numero sempre in alto a destra
+  \renewcommand{\headrulewidth}{0pt} % opzionale: niente linea
+}
+\setcounter{tocdepth}{3}
 
 \title{\textbf{Linguaggi}}
 \author{Mattia Nicolis}
