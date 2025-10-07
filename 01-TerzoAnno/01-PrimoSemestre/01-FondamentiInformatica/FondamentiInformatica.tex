@@ -7,8 +7,10 @@
 \usepackage{amsmath}
 \setlength{\parindent}{0pt}
 \usepackage{parskip}
+\usepackage{amsfonts}
 \usepackage{soul}
 \usepackage{xcolor}
+\usepackage[most]{tcolorbox}
 \sethlcolor{yellow}
 \usepackage{array}
 \usepackage{booktabs}
@@ -40,4 +42,171 @@
     \tableofcontents
     \markboth{}{}
 
+    %-------MODULO DI TEORIA------------------------------------
+    %-------Prof: Isabella Mastroeni----------------------------
+    %-------Lez: lunedì (14:00-16:00) [Aula D - Cav.1]----------
+    %-------Lez: martedì (8:30-10:30) [Aula A - Cav.1]----------
+
+    %-------Ho unito slide della prof, appunti miei e il documento di Lorenzo
+    \chapter*{Introduzione}
+    \addcontentsline{toc}{chapter}{Introduzione}
+    L'informatica si occupa di risolvere problemi.
+
+    La soluzione di un problema è un \textbf{algoritmo}, ovvero una squenza finita di passi che, se seguiti correttamente, \hl{risolvono il problema}.
+
+    Poichè ogni dato può essere rappresentato da numeri naturali, tramite una biizeione, è sufficiente considerare funzioni del tipo:
+    \begin{equation*}
+      f:\mathbb{N}\rightarrow\mathbb{N}
+    \end{equation*}
+
+    per modellare tutti i possibili problemi.
+
+    \vspace{3mm}
+
+    \begin{tcolorbox}[
+      colback=cyan!5!white,
+      colframe=blue!50!black,
+      title=\textbf{Definizione - funzione calcolabile},
+      coltitle=white,
+      fonttitle=\bfseries,
+      arc=3mm,
+      boxrule=0.5pt,
+      enhanced,
+      breakable
+    ]
+      Una \textbf{funzione} $f$ si dice \textbf{calcolabile} se \hl{esiste un algoritmo che, dato un input $x$, restituisce $f(x)$}  
+    \end{tcolorbox}
+
+    \vspace{3mm}
+
+    Nell'insieme delle funzioni $\mathbb{N}\rightarrow\mathbb{N}$, la parte delle funzioni calcolabili è strettamente contenuta.
+
+    \vspace{3mm}
+
+    \begin{tcolorbox}[
+      colback=cyan!5!white,
+      colframe=blue!50!black,
+      title=\textbf{Definizione - alfabeto},
+      coltitle=white,
+      fonttitle=\bfseries,
+      arc=3mm,
+      boxrule=0.5pt,
+      enhanced,
+      breakable
+    ]
+      Un \textbf{alfabeto} $\Sigma$ è un'\hl{insieme finito di simboli}.
+    \end{tcolorbox}
+
+    \vspace{1.5mm}
+    
+    Esempio: consideriamo l'alfabeto $Sigma = \{0, 1\}$.
+
+    Le stringhe componibili da $Sigma$ sono:
+    \begin{equation*}
+      \Sigma^{*} = \{\epsilon, 0, 1, 00, 01, 10, 11, 0000, \dots\}
+    \end{equation*}
+
+    $\Sigma^{*}$ = è detto \textbf{insieme delle sequenza di lunghezza finita sull'alfabeto}.
+
+    La stringa $\epsilon$ è la stringa vuota.
+
+    Poichè non vi è limite alla lunghezza delle stringhe, l'insieme $\Sigma^{*}$ e la sua cardinalità vale:
+    \begin{equation*}
+      |\Sigma^{*}| = |\mathbb{N}|
+    \end{equation*}
+
+    \vspace{3mm}
+
+    \begin{tcolorbox}[
+      colback=cyan!5!white,
+      colframe=blue!50!black,
+      title=\textbf{Definizione - algoritmo},
+      coltitle=white,
+      fonttitle=\bfseries,
+      arc=3mm,
+      boxrule=0.5pt,
+      enhanced,
+      breakable
+    ]
+      Un \textbf{algoritmo} $\Sigma$ è una \hl{seuqenza finita di simboli su un'alfabeto}.
+    \end{tcolorbox}
+    
+    \section*{Induzione matematica}
+    \addcontentsline{toc}{section}{induzione matematica}
+    Per utilizzare il principio di induzione su un insieme, è necassario che su questo sussita una relazione d'ordine ben fondata.
+
+    \begin{tcolorbox}[
+      colback=cyan!5!white,
+      colframe=blue!50!black,
+      title=\textbf{Definizione - induzione matematica},
+      coltitle=white,
+      fonttitle=\bfseries,
+      arc=3mm,
+      boxrule=0.5pt,
+      enhanced,
+      breakable
+    ]
+      Sia $A$ un insieme con una relazione d'ordine $<$ ben fondata.
+
+      \vspace{1mm}
+
+      Sia $\pi$ una proprietà definita sugli elementi di $A$.
+
+      \vspace{1mm}
+
+      Allora vale la seguente corrisposndenza:
+      \begin{equation*}
+        \forall a \in A: \pi(a) \Leftrightarrow \forall a \in A: ((\forall b \in A.b < a: \pi(b))) \Rightarrow \pi(a)
+      \end{equation*}
+    \end{tcolorbox}
+
+
+    \chapter*{Linguaggi regolari}
+    \addcontentsline{toc}{chapter}{Linguaggi regolari}
+
+    \begin{tcolorbox}[
+      colback=cyan!5!white,
+      colframe=blue!50!black,
+      title=\textbf{Definizione - stringa},
+      coltitle=white,
+      fonttitle=\bfseries,
+      arc=3mm,
+      boxrule=0.5pt,
+      enhanced,
+      breakable
+    ]
+      Una \textbf{stringa}, o parola, è una \hl{sequenza finita di simboli su un alfabeto $\Sigma$}.
+    \end{tcolorbox}
+
+    \vspace{3mm}
+
+    \begin{tcolorbox}[
+      colback=cyan!5!white,
+      colframe=blue!50!black,
+      title=\textbf{Definizione - lunghezza di una stringa},
+      coltitle=white,
+      fonttitle=\bfseries,
+      arc=3mm,
+      boxrule=0.5pt,
+      enhanced,
+      breakable
+    ]
+      La lunghezza $|x|$ di una stringa $x$ è il numero di occorrenze di simboli al suo interno.
+    \end{tcolorbox}
+
+    Alcuni esempi di linguaggio sono $0$, dato che è sottoinsieme di qualsiasi insieme, e $\{\epsilon\}$, la stringa vuota.
+
+    Quest'ultimo compone, appunto, il linguaggio $L$ che contiene solo la stringa vuota.
+
+    \section*{Automi a stati finiti deterministici}
+    \addcontentsline{toc}{section}{Automi a stati finiti deterministici}
+    I linguaggi regolari sono tali per cui esiste un automa a stati finiti deterministico che li riconosce.
+
+    Un automa è composto da un nastro di lunghezza illimitata, ma in sola lettura e dunque non possiede nessuna alcun tipo di memoria attiva.
+
+    Il nastro viene letto mediante una testina e scorre in una sola direzione.
+
+    L'automa possiede inoltre un'entità di controllo, descritta attraverso lo stato in cui si trova.
+
+    Un programma in esecuzione sull'unità, infiene, si ossupa di stabilire le transizioni di stato.
 \end{document}
