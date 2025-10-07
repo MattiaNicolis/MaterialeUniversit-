@@ -7,6 +7,7 @@
 \usepackage{amsmath}
 \setlength{\parindent}{0pt}
 \usepackage{parskip}
+\usepackage[most]{tcolorbox}
 \usepackage{soul}
 \usepackage{xcolor}
 \sethlcolor{yellow}
@@ -40,4 +41,162 @@
     \tableofcontents
     \markboth{}{}
 
+    %-------MODULO DI TEORIA------------------------------------
+    %-------Prof: Alessandro Farinell---------------------------
+    %-------Lez: mercoledì (8:30-11:30) [Aula Delta - Cav.3]----
+    %-------Libro: Artificial Intelligence: a modern approach---
+    \chapter*{Introduzione all'intelligenza artificiale}
+    \addcontentsline{toc}{chapter}{Introduzione all'intelligenza artificiale}
+    Il \hl{compito dell’\textbf{intelligenza artificiale} (IA) non è solo quello di \textit{comprendere}, ma anche di \textit{costruire} entità intelligenti}: macchine in grado di calcolare come agire in modo efficace e sicuro in un’ampia varietà di situazioni nuove.
+
+    In passato, gli studiosi hanno proposto diverse versioni di IA: alcuni hanno definito l’intelligenza in termini di fedeltà alla \textbf{prestazione umana}, mentre altri preferiscono una definizione formale di intelligenza come \textbf{razionalità}.
+
+    I metodi utilizzati sono necessariamente diversi: l’approccio che persegue un’intelligenza simile a quella umana deve essere in parte una scienza empirica correlata alla psicologia, richiedendo osservazioni e ipotesi riguardo al comportamento umano e ai processi di pensiero.
+
+    Un approccio razionalista, invece, sfrutta una combinazione di matematica e ingegneria e si collega alla statistica, alla teoria del controllo e all’economia.
+
+    \begin{tcolorbox}[
+      colback=cyan!5!white,
+      colframe=blue!50!black,
+      title=\textbf{Test di Turing},
+      coltitle=white,
+      fonttitle=\bfseries,
+      arc=3mm,
+      boxrule=0.5pt,
+      enhanced,
+      breakable
+    ]
+      Il \textbf{test di Turing}, proposto da Alan Turing nel 1950, mira a comprendere se una macchina è in grado di pensare.
+
+      \vspace{2mm}
+
+      Un computer supera il test se un esaminatore umano, dopo aver posto alcune domande in forma scritta, non è in grado di distinguere se le risposte provengano da una persona o da una macchina.
+
+      \vspace{2mm}
+
+      Per superare il test, il computer deve possedere le seguenti capacità:
+      \begin{itemize}
+        \item \textbf{interpretazione del linguaggio naturale}, per comunicare con successo nel linguaggio umano
+        \item \textbf{rappresentazione della conoscenza}, per memorizzare ciò che conosce o apprende
+        \item \textbf{\textbf{ragionamento automatico}}, per rispondere alle domande e trarre nuove conclusioni
+        \item \textbf{apprendimento automatico} (\textit{machine learning}), per adattarsi a nuove circostanze, individuare ed estrapolare schemi
+      \end{itemize}
+
+      \vspace{2mm}
+
+      Esiste, inoltre, un cosiddetto \textbf{test di Turing totale}, che richiede l’interazione con oggetti e persone nel mondo reale.
+
+      \vspace{2mm}
+
+      Per superare il test di Turing totale, un robot deve anche possedere:
+      \begin{itemize}
+        \item \textbf{visione artificiale} e riconosciemtno vocale, per percepire il mondo
+        \item \textbf{robotica}, per manipolare gli oggetti e muoversi fisicamente
+      \end{itemize}
+    \end{tcolorbox}
+
+    \section*{Tipologie di intelligenza artificiale}
+    \addcontentsline{toc}{section}{Tipologie di intelligenza artificiale}
+
+    \subsection*{\textcolor{blue}{Agenti autonomi}}
+    \addcontentsline{toc}{subsection}{Agenti autonomi}
+    Sono sistemi che percepiscono l’ambiente e agiscono in modo autonomo per raggiungere obiettivi specifici.
+
+    \subsection*{\textcolor{blue}{Data analysis}}
+    \addcontentsline{toc}{subsection}{Data analysis}
+    Consiste nell’utilizzo di algoritmi per analizzare grandi quantità di dati ed estrarre informazioni utili e correlazioni complesse.
+
+    \subsection*{\textcolor{blue}{Machine Learning}}
+    \addcontentsline{toc}{subsection}{Machine Learning}
+    È lo sviluppo di algoritmi che permettono ai modelli di apprendere dai dati di esempio e migliorare le proprie prestazioni nel tempo, senza essere esplicitamente programmati.
+    
+    Un esempio è il riconoscimento di immagini.
+
+    L’apprendimento automatico si divide in tre categorie principali:
+    \begin{itemize}
+      \item \textbf{unsupervised learning}: l modello viene addestrato su dati non etichettati, con l’obiettivo di scoprire strutture nascoste o pattern nei dati senza risposte predefinite.
+    \item \textbf{supervised learning}: l modello viene addestrato su dati etichettati, dove ogni input è associato a una risposta corretta. L’obiettivo è imparare a mappare correttamente gli input alle risposte
+      \item \textbf{reinforced learning}: il modello apprende attraverso interazioni con l’ambiente, ricevendo ricompense o penalità in base alle azioni compiute. L’obiettivo è massimizzare la ricompensa totale nel tempo
+    \end{itemize}
+
+    \subsection*{\textcolor{blue}{Time series analysis}}
+    \addcontentsline{toc}{subsection}{Time series analysis}
+    L’analisi delle serie temporali è un’area dell’apprendimento automatico che si concentra sull’analisi di dati raccolti nel tempo.
+
+    Le serie temporali sono sequenze di dati misurati a intervalli regolari, come la temperatura giornaliera, i prezzi delle azioni o i dati di vendita mensili.
+
+    L’obiettivo è identificare pattern, tendenze e stagionalità per effettuare previsioni future.
+
+    \vspace{1em}
+
+    Gli approcci comuni includono:
+    \begin{itemize}
+      \item \textbf{riconoscimento di anomalie e cause}: identificazione di eventi che si discostano dal comportamento normale, potenzialmente indicativi di errori o problemi.
+
+      \item \textbf{generative transformers}: modelli in grado di predire il prossimo elemento in una sequenza di dati (ad esempio la parola successiva in una frase o il pixel successivo in un’immagine), utilizzando il concetto di \textbf{attenzione} per pesare l’importanza delle diverse parti della sequenza di input.
+    \end{itemize}
+
+    \subsection*{\textcolor{blue}{Agenti intelligenti}}
+    \addcontentsline{toc}{subsection}{Agenti intelligenti}
+    Un agente intelligente è un sistema che percepisce l’ambiente circostante attraverso sensori e agisce su di esso per raggiungere un obiettivo specifico.
+
+    Gli elementi chiave di un agente intelligente sono:
+    \begin{itemize}
+      \item \textbf{performance measure}: misura il successo dell’agente nel raggiungere i propri obiettivi
+      \item \textbf{rationality}: l’agente deve agire in modo da massimizzare la performance attesa
+    \end{itemize}
+
+    \subsection*{\textcolor{blue}{Markov Decision Process (MDP)}}
+    \addcontentsline{toc}{subsection}{Markov Decision Process (MDP)}
+    Un MDP è un modello matematico utilizzato per rappresentare problemi di decisione sequenziali. I suoi elementi principali sono:
+    \begin{itemize}
+      \item \textbf{state}: rappresenta l’ambiente in un determinato momento
+      \item \textbf{actions}: nsieme delle azioni che l’agente può intraprendere
+      \item \textbf{transition model}: descrive l’effetto delle azioni sull’ambiente (può essere parzialmente incognito)
+        \[
+          T: (state, action) \to next\_state
+        \] 
+      \item \textbf{reward}: vvalore immediato associato all’esecuzione di un’azione
+        \[
+          R: (state, action, next\_state) \to real\_number
+        \] 
+      \item \textbf{Policy}: strategia con cui l’agente decide quale azione intraprendere in ogni stato per massimizzare la ricompensa totale attesa nel tempo
+        \[
+          \pi: (state) \to action
+        \] 
+    \end{itemize}
+
+    \subsection*{\textcolor{blue}{Generative AI}}
+    \addcontentsline{toc}{subsection}{Generative AI}
+    L’intelligenza artificiale generativa comprende una classe di modelli in grado di creare nuovi contenuti — testo, immagini, musica o video — a partire da dati di addestramento.
+
+    Questi modelli possiedono miliardi di parametri e sono pre-addestrati su enormi quantità di dati.
+
+    In sostanza, “predicono il futuro” basandosi sui dati su cui sono stati \textbf{addestrati} e su un \textbf{prompt} (input dell’utente).
+
+
+
+    \chapter*{Agenti intelligenti}
+    \addcontentsline{toc}{chapter}{Agenti intelligenti}
+    Un \textbf{agente} è qualsiasi \hl{entità che possa essere vista come un sistema che percepisce il proprio ambiente attraverso dei \textbf{sensori} e agisce su di esso mediante \textbf{attuatori}}.
+
+    Un agente umano possiede come \textbf{sensori} gli occhi e altri organi, e può utilizzare come \textbf{attuatori} mani, gambe, corde vocali ecc.
+
+    Un agente robotico può invece disporre di telecamere e telemetri a infrarossi come sensori, e di diversi motori come attuatori.
+
+    %foto agente
+
+    \begin{tcolorbox}[
+      colback=cyan!5!white,
+      colframe=blue!50!black,
+      title=\textbf{Definizione formale di agente razionale},
+      coltitle=white,
+      fonttitle=\bfseries,
+      arc=3mm,
+      boxrule=0.5pt,
+      enhanced,
+      breakable
+    ]
+      Per ogni possibile sequenza di percezioni, un agente razionale dovrebbe scegliere un’azione che massimizzi il valore atteso della sua misura di performance, date le informazioni fornite dalla sequenza e da ogni ulteriore conoscenza posseduta dall’agente.
+    \end{tcolorbox}
 \end{document}
