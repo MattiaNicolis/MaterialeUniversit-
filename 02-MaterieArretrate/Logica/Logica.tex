@@ -9,6 +9,8 @@
 \usepackage{parskip}
 \usepackage{soul}
 \usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{amsfonts}
 \sethlcolor{yellow}
 \usepackage{array}
 \usepackage{booktabs}
@@ -40,4 +42,59 @@
     \tableofcontents
     \markboth{}{}
 
+    \chapter*{Introduzione alla logica}
+    \addcontentsline{toc}{chapter}{Introduzione alla logica}
+    La \textbf{logica} si occupa di \hl{formalizzare i ragionamenti matematici} utilizzando il linguaggio matematico.
+
+    Ciò è dovuto al fatto che il linguaggio naturale è ambiguo per la descrizione di teorimi.
+
+    La logica si divide in:
+    \begin{itemize}
+      \item \textbf{logica formale}: che a sua volta si divide in
+      \begin{itemize}
+        \item \textit{logica simbolica}
+        \item \textit{Logica matematica}: studia la calcolabilità [studiata a fondamenti] 
+      \end{itemize}
+      \item \textbf{logica filosofica}: ha a che fare con il linguaggio naturale
+    \end{itemize}
+
+    \section*{Numeri naturali}
+    \addcontentsline{toc}{section}{Numeri naturali}
+    Dal punto di vista intuitivo i numeri sono un insieme infinito:
+    \begin{equation*}
+      \mathbb{N} = \{0, 1, 2, \dots\}
+    \end{equation*}
+    per i quali sono definite le operazioni standard aritmetiche elementari.
+
+    Peano definì in maniera rigorosa i numeri naturali.
+
+    \begin{tcolorbox}[
+      colback=cyan!5!white,
+      colframe=blue!50!black,
+      title=\textbf{Definizione - numeri naturali},
+      coltitle=white,
+      fonttitle=\bfseries,
+      arc=3mm,
+      boxrule=0.5pt,
+      enhanced,
+      breakable
+    ]
+      I \textbf{numeri naturali} sono una tupla:
+      \begin{equation*}
+        \langle \mathbb{N}, 0, succ \rangle
+      \end{equation*}
+
+      Su quetsa tupla, sono definite 4 assiomi (teoremi che non si dimostrano):
+      \begin{enumerate}
+        \item $0 \in \mathbb{N}$
+        \item $succ: \mathbb{N} \rightarrow \mathbb{N}$ (operazione unaria iniettiva)
+        \item $0 \notin \mathrm{Im}(succ)$ (zero non è successore di nessuno)
+        \item (\textbf{Principio di induzione}) per ogni $\mathbb{P} \subseteq \mathbb{N}$ valgono le seguenti proprietà:
+        \begin{itemize}
+          \item $0 \in \mathbb{P}$
+          \item $\forall n \in \mathbb{N}, (n \in \mathbb{P} \rightarrow succ(n) \in \mathbb{P})$
+        \end{itemize}
+        $\Rightarrow \mathbb{P} = \mathbb{N}$
+      \end{enumerate}
+    \end{tcolorbox}
 \end{document}
