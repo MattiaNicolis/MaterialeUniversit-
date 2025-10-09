@@ -1,6 +1,4 @@
 # uniNotes
-
-## 📚 Appunti Universitari
 Questa repository raccoglie i nostri appunti universitari del percorso di studi, con particolare attenzione alle materie del terzo anno e ad alcune materie arretrate dei primi due anni.
 
 L’obiettivo è avere un archivio ordinato e facilmente consultabile, utile sia per il ripasso personale che come riferimento per altri studenti.
