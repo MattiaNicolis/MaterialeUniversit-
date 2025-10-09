@@ -8,8 +8,11 @@
 \setlength{\parindent}{0pt}
 \usepackage{parskip}
 \usepackage[most]{tcolorbox}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage{soul}
 \usepackage{xcolor}
+\usepackage{amsmath}
 \sethlcolor{yellow}
 \usepackage{array}
 \usepackage{booktabs}
@@ -184,8 +187,6 @@
 
     Un agente robotico può invece disporre di telecamere e telemetri a infrarossi come sensori, e di diversi motori come attuatori.
 
-    %foto agente
-
     \begin{tcolorbox}[
       colback=cyan!5!white,
       colframe=blue!50!black,
@@ -199,4 +200,36 @@
     ]
       Per ogni possibile sequenza di percezioni, un agente razionale dovrebbe scegliere un’azione che massimizzi il valore atteso della sua misura di performance, date le informazioni fornite dalla sequenza e da ogni ulteriore conoscenza posseduta dall’agente.
     \end{tcolorbox}
+
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.4\textwidth, keepaspectratio]{foto/agente-ambiente.png}
+      \caption{agente razionale}
+    \end{figure}
+
+    Useremo il termine \textbf{percezione} per indicare i dati che i sensori di un agente percepiscono.
+
+    La \textbf{seuquenza percettiva} di un agente è la storia completa di tutto ciò che esso ha percepito nella sua esistenza.
+
+    Sèecificando l'azione prescelta dell'agente per ogni possibile sequenza percettiva, abbiamo descritto l'agente in modo completo.
+
+    In termini matematici diciamo, quindi, che il comportamento di un agente è descritto dalla \textbf{funzione agente}, che descrive la corrispondenza tra una qualsiasi sequenza percettiva e una specifica azione:
+    \begin{equation*}
+      f : \mathcal{P}^{*} \rightarrow \mathcal{A}
+    \end{equation*}
+
+    Possiamo immaginire di rappresentare in forma di tabella la funzione agente che descrive un certo agente.
+
+    Nella maggior parte dei casi questa tabella sarebbe molto grande, di fatto infinito, a meno di non specificare una lunghezza massima delle sequenza percettive che vogliamo prendere in considerazione.
+
+    La tabella è una descrizione esterna dell'agente.
+
+    Internamente, la funzione agente di un agente artificale sarà implementata da un \textbf{programma agente}.
+
+    E' importante tenere distinti questi due concetti:
+    \begin{itemize}
+      \item \textit{funzione agente}: descrizione matematica stratta
+      \item \textit{programma agente}: implemenyazione concreta della funzione agente, in esecuzione all'interno di un sistema fisico.
+    \end{itemize}
+
 \end{document}
