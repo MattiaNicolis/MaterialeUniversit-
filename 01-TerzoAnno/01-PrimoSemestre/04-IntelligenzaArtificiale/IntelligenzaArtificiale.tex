@@ -4,11 +4,17 @@
 %\usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{amsthm}       % per \theoremstyle e ambienti tipo theorem, definition, example
+\usepackage{mdframed}     % per \newmdtheoremenv (ambienti incorniciati)
+\usepackage{float}
+\usepackage{mdframed}
+\usepackage{listings}
 \usepackage{amsmath}
 \setlength{\parindent}{0pt}
 \usepackage{parskip}
 \usepackage[most]{tcolorbox}
 \usepackage{amsfonts}
+\usepackage{}
 \usepackage{amssymb}
 \usepackage{soul}
 \usepackage{xcolor}
@@ -48,6 +54,20 @@
     %-------Prof: Alessandro Farinell---------------------------
     %-------Lez: mercoledì (8:30-11:30) [Aula Delta - Cav.3]----
     %-------Libro: Artificial Intelligence: a modern approach---
+
+
+
+    % Example frame
+    \newmdenv[
+      linecolor=gray,
+      backgroundcolor=gray!10,
+      innertopmargin=8pt,
+      innerbottommargin=8pt
+    ]{example}
+
+
+
+
     \chapter*{Introduzione all'intelligenza artificiale}
     \addcontentsline{toc}{chapter}{Introduzione all'intelligenza artificiale}
     Il \hl{compito dell’\textbf{intelligenza artificiale} (IA) non è solo quello di \textit{comprendere}, ma anche di \textit{costruire} entità intelligenti}: macchine in grado di calcolare come agire in modo efficace e sicuro in un’ampia varietà di situazioni nuove.
@@ -232,4 +252,61 @@
       \item \textit{programma agente}: implemenyazione concreta della funzione agente, in esecuzione all'interno di un sistema fisico.
     \end{itemize}
 
+    \section*{Strategie di ricerca non informata}
+    \addcontentsline{toc}{section}{Strategie di ricerca non informata}
+    Un \textbf{algoritmo di ricerca non informata} non riceve alcuna informazione su quanto uno stato sia vicino all'obiettivo.
+
+    Es: consideriamo una persona che si trova ad Arad con l'obiettivo di raggiungere Burarest.
+
+    Una persona non informata, priva di conoscenza della geografia romena, non ha modo di sapre se sia meglio come primo passo andare a Zerind o Sibiu.
+
+    \subsection*{Ricerca in ampiezza}
+    \addcontentsline{toc}{subsection}{Ricerca in ampiezza}
+    Quando tutte le \hl{azioni hanno lo stesso costo}, una strategia appropriata è la \textbf{ricerca in ampiezza}, in cui si espande prima il nodo radice, poi tutti i suoi sucessori, poi i sucessori di quest'ultimi, e così via.
+
+    Potremmo implementare la ricerca in ampiezza, chiamata \textbf{RICERCA-BEST-FIRST}, con la funzione di valutezione $f(n)$ è uguale alla profondità del nodo, cioè al numero di azioni necessario per ragiungerlo.
+
+    Una coda FIFO (First In First Out) risulterà più veloce di una coda con priorità e ci fornirà l'ordine corretto dei nodi: i nuovi nodi vanno in fondo alla coda e quelli vecchi, a profondità minore, vengono espansi per primi.
+
+    Inoltre, raggiunti può essere un insieme di stati, anzichè una corrispondeza da stati a nodi, perchè una volta raggiunto uno stato, non possiamo più trovare un cammino migliore per raggiungerlo.
+
+    LA ricerca in amppiezza trova sempre una soluzione con un numero minimo di azioni, perchè quando genre nodi di profondità $d$, ha già generato tutti i nodi di profondità $d - 1$, perciò se uno di essi fosse una soluzione, sarebbe stato stato trovato.
+
+    Ciò significa che è ottimale rispetto al costo per problemi in cui tutte le azioni hanno lo stesso costo, ma non per problemi che non hanno tale proprietà.
+
+    E' completa in ogni caso.
+
+    In termini di tempo di tempo e spazio, supponiamo di effettuare una ricerca in un albero uniforme dove ogni stato ha $b$ sucessori.
+
+    Allora il numer totale di nodi generati è:
+    \begin{equation*}
+      1 + b + b^2 + b^3 + \dots + b^d = O(b^d)
+    \end{equation*}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.7\textwidth, keepaspectratio]{foto/ricercaInAmpiezza.jpeg}
+      \caption{algoritmo BFS}
+    \end{figure}
+
+    %pseudo-codice algoritmo
+
+    \begin{example}
+      \begin{lstlisting}[language=Python, breaklines=true, linewidth=\linewidth]
+        function BFS(problem) returns a solution, or failure
+          nodo <- nodo(problema.statoIniziale)
+      \end{lstlisting}
+    \end{example}
+
+    Tutti i nodi rimangono in memoria, perciò le complessità temporale e spaziale sono entrambe $O(b^d)$, quindi, esponenziali.
+    
+    Nella ricerca in ampiezza, i requisiti di memoria rappresentano un problrma più importante rispetto al tempo di esucuzione.
+
+    Tuttavia, il tempo rimane comunque un fattore importante.
+
+    In generale, i problemi di ricerca con complessità esponenziale non possono essere risolti mediante ricercche non informate, se non nelle istante più pisccole.
+
+    \subsection*{Ricerca a costo minimo (algoritmo Dijkstra)}
+    \addcontentsline{toc}{subsection}{Ricerca a costo minimo (algoritmo Dijkstra)}
+    Quando le azioni hanno costi diversi, si utilizza BFS in cui la funzione di valutazione è il costo del cammino della radice al nodo corrente: si tratta dell'\textbf{algoritmo di Dijkstra} o \textbf{ricerca a costo uniforme}.
 \end{document}
