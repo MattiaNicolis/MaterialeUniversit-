@@ -4,6 +4,7 @@
 %\usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{subcaption}
 \usepackage{amsmath}
 \setlength{\parindent}{0pt}
 \usepackage{parskip}
@@ -50,6 +51,12 @@
     \section*{Sistemi e segnali}
     \addcontentsline{toc}{section}{Sistemi e segnali}
 
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.6\textwidth, keepaspectratio]{foto/sistemi&segnali.png}
+      \caption{sistema e segnali}
+    \end{figure}
+
     \begin{tcolorbox}[
       colback=cyan!5!white,
       colframe=blue!50!black,
@@ -61,14 +68,43 @@
       enhanced,
       breakable
     ]
-      Un \textbf{segnale} è un \hl{insieme di dati o informazioni} (segnale telefonico o televisivo ecc.).
+      Un \textbf{segnale} è un \hl{insieme di dati o informazioni}.
     \end{tcolorbox}
 
     \vspace{2mm}
 
-    I segnali sono funzioni della variabile indipendente \textit{tempo}.
+    Un segnale rappresenta qualsiasi tipo di variabile fisica soggetta a variazioni. 
 
-    Un segnale può essere elaborato da un \textbf{sistema}, che li possono modificare o estrane informazioni aggiuntive.
+    I segnali sono funzioni della variabile indipendente \textit{tempo} ($t$) o \textit{spazio} ($x, x = [x_1, x_2], x = [x_1, x_2, x_3]$).
+
+    Sia la variabile indipendente che la variabile fisica possono essere scalari o vettoriali.
+
+    Esempi di segnali:
+    \begin{description}
+      \item [segnali 1D]: segnale elettrocardiografico (EEG), segnale vocale, segnale audio
+      \item [segnali 2D]: segnale immagine, segnale video 
+      \item [segnali 3D]: segnale di dati volumetrici
+    \end{description}
+
+    \begin{figure}[h]
+      \centering
+
+      \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=3.8cm]{foto/segnale-audio.png}
+        \caption{segnale 1D - segnale audio}
+      \end{subfigure}
+      \hfill
+      \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth, height=3.8cm]{foto/segnale-elettrocardiogramma.png}
+        \caption{segnale 1D - elettrocardiogramma}
+     \end{subfigure}
+    \end{figure}
+
+    \
+    
+    Un segnale può essere elaborato da un \textbf{sistema}.
 
     \vspace{2mm}
 
@@ -86,10 +122,25 @@
       Un \textbf{sistema} è un'\hl{entità che elabora un insieme di segnali (\textit{input}) per produrre un altro insieme di segnali (\textit{output})}.
     \end{tcolorbox}
 
+    I sistemi processano i segnali per:
+    \begin{itemize}
+      \item estrarre informazioni
+      \item consentire la trasmissione su canali con capacità limitata (JPEG, JPEG2000, codifica MPEG)
+      \item migliorare la sicurezza sulle reti (crittografia, watermarking)
+      \item migliorare la sicurezza sulle reti (crittografia, watermarking)
+    \end{itemize}
+
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.6\textwidth, keepaspectratio]{foto/sistema.png}
+      \caption{sistema}
+    \end{figure}
+
+    La funzione che collega l'uscita del sistema con il segnale di ingresso è chiamata \textbf{risposta all'impulso} $h(t)$ nel dominio del \textit{tempo} e \textbf{funzione di trasferimento} $H(\omega)$ nel dominio della \textit{frequenza}. 
 
     \subsection*{Classificazione dei segnali}
     \addcontentsline{toc}{subsection}{Classificazione dei segnali}
-    I segnali possono essere di4 tipologie:
+    I segnali possono essere di 4 tipologie:
     \begin{itemize}
       \item \textbf{segnali a tempo continuo} e \textbf{a tempo discreto}
       \item \textbf{segnali analogici} e \textbf{digitali}
@@ -98,8 +149,8 @@
       \item \textbf{segnali deterministici} e \textbf{probabilistci}
     \end{itemize}
 
-    \subsubsection*{Segnali a tempo continuo e atempo discreto}
-    \addcontentsline{toc}{subsubsection}{Segnali a tempo continuo e atempo discreto}
+    \subsubsection*{Segnali a tempo continuo e a tempo discreto}
+    \addcontentsline{toc}{subsubsection}{Segnali a tempo continuo e a tempo discreto}
 
 
 
